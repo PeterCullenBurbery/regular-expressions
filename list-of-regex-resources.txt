@@ -1,0 +1,5 @@
+https://cs.lmu.edu/~ray/notes/regex/
+Good for capturing groups. https://regex101.com/
+https://regexr.com/ good for saving regexes.
+https://www.rexegg.com/regex-quickstart.html
+https://gist.github.com/jacksonfdam/3000275
