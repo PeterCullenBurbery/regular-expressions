@@ -1,0 +1,18 @@
+basic ISO 8601 week date regex that matches things like 2024-W15-3 but not 2024-W60-3 and 2024-W15-9
+\d{4}-W\d{2}-[1-7]
+more advanced and accurate regex
+\d{3}[1-9]-W(0[1-9]|[1-4][0-9]|5[0-3])-[1-7]
+test on
+2024-W15-3 0001-W15-3 0000-W15-3 9999-W15-3 2024-W54-3 2024-W15-8
+See https://regexr.com/7uokv and https://regexr.com/7uol2. It seems like \d{4} four digits in a row is accurate but not quite because 0000 is not a valid YYYY year format example. Also the highest possible W is W53. W54 up to W99 is not allowed. W00 is also not allowed. Here are some test cases.
+W00 W01 W02 W03 W04 W05 W06 W07 W08 W09 W10 W11 W12 W13 W14 W15 W16 W17 W18 W19 W20 W21 W22 W23 W24 W25 W26 W27 W28 W29 W30 W31 W32 W33 W34 W35 W36 W37 W38 W39 W40 W41 W42 W43 W44 W45 W46 W47 W48 W49 W50 W51 W52 W53 W54 W55 W56 W57 W58 W59 W60 W61 W62 W63 W64 W65 W66 W67 W68 W69 W70 W71 W72 W73 W74 W75 W76 W77 W78 W79 W80 W81 W82 W83 W84 W85 W86 W87 W88 W89 W90 W91 W92 W93 W94 W95 W96 W97 W98 W99
+This Python script generates these.
+# Generate all possibilities from W00 to W99
+possibilities = [f"W{i:02d}" for i in range(100)]
+
+# Join all possibilities with a space
+output = " ".join(possibilities)
+
+# Print the output
+print(output)
+
